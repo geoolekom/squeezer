@@ -1,18 +1,16 @@
-import asyncio
 import logging
 from aiohttp import web
 
-from handlers.get import get
+from project.loop import loop
+from handlers.telegram import handler as tg_handler
 from project.settings import HOST, PORT
 
 logger = logging.getLogger(__name__)
 
 async def init(loop):
     app = web.Application(loop=loop)
-    app.router.add_get('/', get)
+    app.router.add_post('/api/telegram/', tg_handler)
     return app
-
-loop = asyncio.get_event_loop()
 
 try:
     app = loop.run_until_complete(init(loop))

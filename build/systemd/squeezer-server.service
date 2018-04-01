@@ -1,0 +1,13 @@
+[Unit]
+Description=Squeezer Server
+After=network.target
+
+[Service]
+Type=simple
+User=squeezer
+Group=squeezer
+WorkingDirectory=/opt/squeezer/src
+ExecStart=/opt/squeezer/env/src/main.py
+
+[Install]
+WantedBy=multi-user.target
