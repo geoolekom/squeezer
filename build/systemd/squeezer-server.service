@@ -7,7 +7,7 @@ Type=simple
 User=squeezer
 Group=squeezer
 WorkingDirectory=/opt/squeezer/src
-ExecStart=/opt/squeezer/env/src/main.py
+ExecStart=/opt/squeezer/env/bin/python /opt/squeezer/src/main.py
 
 [Install]
 WantedBy=multi-user.target
