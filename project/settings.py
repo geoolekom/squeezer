@@ -16,3 +16,5 @@ HOST = config.get('main', 'HOST')
 PORT = config.getint('main', 'PORT')
 
 TELEGRAM_BOT_TOKEN = config.get('telegram', 'BOT_TOKEN')
+SQUEEZE_RATE = config.getfloat('main', 'RATE', fallback=0.5)
+SQUEEZE_STEP = config.getfloat('main', 'STEP', fallback=1.0)
